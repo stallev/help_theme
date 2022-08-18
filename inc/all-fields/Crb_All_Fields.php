@@ -33,10 +33,25 @@ class Crb_All_Fields {
 				Field::make( 'text',  'site_telegram-link', 'Telegram ссылка')->set_width(25),
 				Field::make( 'text',  'site_whatsapp-link', 'Whatsapp ссылка')->set_width(25),
 				Field::make( 'text',  'site_instagram-link', 'Instagram ссылка')->set_width(25),
-				Field::make( 'text',  'firm_name', 'Название фирмы')->set_width(25),
 				Field::make( 'text',  'page_name', 'Название главной страницы')->set_width(25),
-				Field::make( 'text',  'page_name_descr', 'Регион перевозок')->set_width(25),
-				Field::make( 'text',  'page_meta_descr_seo', 'Meta description для SEO')->set_width(25),
+			))
+			->add_tab( __( 'SEO' ) , array(
+				Field::make( 'text',  'meta_descr_seo', 'Meta description для SEO')->set_width(25),
+				Field::make( 'text',  'meta_keywords', 'keywords для SEO')->set_width(25),
+				Field::make( 'text',  'meta_author', 'meta Author для SEO')->set_width(25),
+				Field::make( 'text',  'meta_copyright', 'meta Copyright для SEO')->set_width(25),
+				Field::make( 'text',  'meta_og_locale', 'meta og:locale для SEO')->set_width(25),
+				Field::make( 'text',  'meta_og_type', 'meta og:type для SEO')->set_width(25),
+				Field::make( 'text',  'meta_og_title', 'meta og:title для SEO')->set_width(25),
+				Field::make( 'text',  'meta_og_description', 'meta og:description для SEO')->set_width(25),
+				Field::make( 'text',  'meta_og_site_name', 'meta og:site_name для SEO')->set_width(25),
+				Field::make( 'image', 'seo_image', 'изображение, которое будет публиковаться в записи' )->set_width(25),
+			))
+			->add_tab( __( 'Сообщение об отправке' ) , array(
+				Field::make( 'text',  'title_notification_message_success', 'Заголовок сообщения об успешной отправке вопроса')->set_width(25),
+				Field::make( 'text',  'text_notification_message_success', 'Текст сообщения об успешной отправке вопроса')->set_width(25),
+				Field::make( 'text',  'title_notification_message_error', 'Заголовок сообщения об ошибке отправки вопроса')->set_width(25),
+				Field::make( 'text',  'text_notification_message_error', 'Текст сообщения об ошибке отправки вопроса')->set_width(25),
 			));
 		return;
 	}
@@ -51,13 +66,33 @@ class Crb_All_Fields {
 					->set_layout( 'grid' )                    
 					
 					->add_fields( 'head-offer', 'Блок шапка ' ,array(
-						Field::make( 'text', 'head-offer-title', 'Заголовок шапки' )->set_width(25),
+						Field::make( 'text', 'head-offer-title1', 'Заголовок шапки часть 1' )->set_width(25),
+						Field::make( 'text', 'head-offer-title2', 'Заголовок шапки часть 2' )->set_width(25),
+						Field::make( 'text', 'head-offer-description', 'Краткое описание' )->set_width(25),
 						Field::make( 'image', 'head-offer-bg', 'Фоновое изображение шапки' )->set_width(25),
-						Field::make( 'complex', 'head-offer_serv_lists', 'Список услуг' )
+						Field::make( 'complex', 'head-offer_serv_lists', 'Что делаем' )
 						->set_layout( 'tabbed-vertical' )
 						->add_fields( array(
-									Field::make( 'text', 'serv_name', 'Название услуги' )->set_width(25),
+									Field::make( 'text', 'serv_name', 'Название пункта' )->set_width(25),
 						) )->set_header_template($this->set_header_template('serv_name'))->set_max(10),
+						
+					) )
+					->add_fields( 'about-us', 'Блок КТО МЫ ' ,array(
+						Field::make( 'text', 'about_title', 'Заголовок блока' )->set_width(25),
+						Field::make( 'complex', 'about_list', 'Что делаем' )
+						->set_layout( 'tabbed-vertical' )
+						->add_fields( array(
+									Field::make( 'text', 'about_item', 'Абзац' )->set_width(25),
+						) )->set_header_template($this->set_header_template('about_item'))->set_max(10),
+						
+					) )
+					->add_fields( 'what_we_do', 'Блок ЧТО МЫ ДЕЛАЕМ ' ,array(
+						Field::make( 'text', 'what_we_do_title', 'Заголовок блока' )->set_width(25),
+						Field::make( 'complex', 'what_we_do_list', 'Блок абзацев' )
+						->set_layout( 'tabbed-vertical' )
+						->add_fields( array(
+									Field::make( 'text', 'what_we_do_item', 'Абзац' )->set_width(25),
+						) )->set_header_template($this->set_header_template('what_we_do_item'))->set_max(10),
 						
 					) )
 					->add_fields( 'transport', 'Блок о транспорте ' ,array(
@@ -77,17 +112,6 @@ class Crb_All_Fields {
 												Field::make( 'text', 'transport_model_char__value', 'Значение параметра' )->set_width(25),
 									) )->set_header_template($this->set_header_template('transport_model_char_name'))->set_max(20),
 						) )->set_header_template($this->set_header_template('transport_title'))->set_max(6),
-					) )
-					->add_fields( 'adv', 'Блок Почему стоит выбрать нас ' ,array(
-						Field::make( 'text', 'adv-goal', 'Описание цели' )->set_width(25),
-						Field::make( 'text', 'adv_list_intr', 'Вводное' )->set_width(25),
-						Field::make( 'image', 'adv_image', 'Боковая картинка' )->set_width(25),
-						Field::make( 'complex', 'adv__descr', 'Список преимуществ' )
-						->set_layout( 'tabbed-vertical' )
-						->add_fields( array(
-									Field::make( 'text', 'adv_name', 'Название преимущества' )->set_width(25),
-						) )->set_header_template($this->set_header_template('adv_name'))->set_max(10),
-						
 					) )					
 				));
 			return;
