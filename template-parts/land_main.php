@@ -271,53 +271,28 @@
           В связи с санкциями, применными к банковской системе России, мы используем различные сервисы для осуществления пожертвования.
         </p>
       </div>
-      <iframe src="https://donorbox.org/embed/help-people-13" name="donorbox" allowpaymentrequest="allowpaymentrequest" seamless="seamless" frameborder="0" scrolling="no" height="900px" width="100%" style="max-width: 500px; min-width: 250px; max-height:none!important"></iframe>
     </div>
   </section>
+  <?php
+    }
+  ?>
+
+  <?php
+    if($c_item['_type'] == "our_photos"){
+  ?>
   <section class="section gallery">
     <div class="container">
       <div class="section-title section-title--black-bg">
         <h2 class="section-title__text">
-          Фотоотчет
+          <?= $c_item['our_photos_title']; ?>
         </h2>
       </div>
       <div class="gallery__list">
-        <a href="../img/content/start/1-min.jpg" class="gallery__item" data-lightbox="roadtrip">
-          <img src="../img/content/start/min/1-min.jpg" class="gallery__item-image" alt="Image">
+        <?php foreach ($c_item['our_photos_gallery'] as $c_subitem) { ?>
+          <a href="<?= wp_get_attachment_image_url($c_subitem, 'full'); ?>" class="gallery__item" data-lightbox="roadtrip">
+            <img src="<?= wp_get_attachment_image_url($c_subitem, 'photo-preview-thumb'); ?>" class="gallery__item-image" alt="Image">
         </a>
-        <a href="../img/content/start/2-min.jpg" class="gallery__item" data-lightbox="roadtrip">
-          <img src="../img/content/start/min/2-min.jpg" class="gallery__item-image" alt="Image">
-        </a>
-        <a href="../img/content/start/3-min.jpg" class="gallery__item" data-lightbox="roadtrip">
-          <img src="../img/content/start/min/3-min.jpg" class="gallery__item-image" alt="Image">
-        </a>
-        <a href="../img/content/start/4-min.jpg" class="gallery__item" data-lightbox="roadtrip">
-          <img src="../img/content/start/min/4-min.jpg" class="gallery__item-image" alt="Image">
-        </a>
-        <a href="../img/content/start/5-min.jpg" class="gallery__item" data-lightbox="roadtrip">
-          <img src="../img/content/start/min/5-min.jpg" class="gallery__item-image" alt="Image">
-        </a>
-        <a href="../img/content/start/6-min.jpg" class="gallery__item" data-lightbox="roadtrip">
-          <img src="../img/content/start/min/6-min.jpg" class="gallery__item-image" alt="Image">
-        </a>
-        <a href="../img/content/start/7-min.jpg" class="gallery__item" data-lightbox="roadtrip">
-          <img src="../img/content/start/min/7-min.jpg" class="gallery__item-image" alt="Image">
-        </a>
-        <a href="../img/content/start/9-min.jpg" class="gallery__item" data-lightbox="roadtrip">
-          <img src="../img/content/start/min/9-min.jpg" class="gallery__item-image" alt="Image">
-        </a>
-        <a href="../img/content/start/25-min.jpg" class="gallery__item" data-lightbox="roadtrip">
-          <img src="../img/content/start/min/25-min.jpg" class="gallery__item-image" alt="Image">
-        </a>
-        <a href="../img/content/start/26-min.jpg" class="gallery__item" data-lightbox="roadtrip">
-          <img src="../img/content/start/min/26-min.jpg" class="gallery__item-image" alt="Image">
-        </a>
-        <a href="../img/content/start/27-min.jpg" class="gallery__item" data-lightbox="roadtrip">
-          <img src="../img/content/start/min/27-min.jpg" class="gallery__item-image" alt="Image">
-        </a>
-        <a href="../img/content/start/28-min.jpg" class="gallery__item" data-lightbox="roadtrip">
-          <img src="../img/content/start/min/28-min.jpg" class="gallery__item-image" alt="Image">
-        </a>
+        <?php } ?>
       </div>
     </div>
   </section>
@@ -336,6 +311,24 @@
           <div class="answers__form-inner">
             <input type="text" class="input-field" placeholder="Ваше имя" name="person-name" required>
             <input type="tel" class="input-field input-field--phone" placeholder="Ваш номер телефона" name="person-phone" required>
+            <p class="answers__form-paragraph answers__form-paragraph--no-pb">
+              Укажите мессенджер для связи:
+            </p>
+            <div class="answers__form-radio-list">
+              <div class="answers__form-radio-item">
+                <input type="radio" id="messengerChoice1" name="person-messenger" value="Telegram">
+                <label for="messengerChoice1">Telegram</label>
+              </div>
+              <div class="answers__form-radio-item">
+                <input type="radio" id="messengerChoice2" name="person-messenger" value="Viber">
+                <label for="messengerChoice2">Viber</label>
+              </div>
+              <div class="answers__form-radio-item">
+                <input type="radio" id="messengerChoice3" name="person-messenger" value="WhatsApp">
+                <label for="messengerChoice3">WhatsApp</label>
+              </div>
+            </div>
+            <input type="email" class="input-field" placeholder="Ваш email" name="person-email">
             <textarea name="" id="" cols="30" rows="6" class="answers__form-textarea-field" name="person-message" placeholder="Текст сообщения" ></textarea>
             <div class="action__group action__group--answers">
               <button type="submit" class="action">

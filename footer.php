@@ -93,10 +93,12 @@
             </div>
             <span class="modal-notification__symbol">&#10004;</span>
             <h2 class="modal-notification__title">
-              Сообщение успешно отправлено
+              <!-- Сообщение успешно отправлено -->
+              <?php echo carbon_get_theme_option('title_notification_message_success'); ?>
             </h2>
             <p class="modal-notification__text">
-              Мы вскоре Вам позвоним
+              <!-- Мы вскоре Вам позвоним -->
+              <?php echo carbon_get_theme_option('text_notification_message_success'); ?>
             </p>
           </div>
           <div class="modal__content modal__content--error-send modal-notification modal-notification--error">
@@ -105,10 +107,12 @@
             </div>
             <span class="modal-notification__symbol">&#9888;</span>
             <h2 class="modal-notification__title">
-              Что-то пошло не так
+              <!-- Что-то пошло не так -->
+              <?php echo carbon_get_theme_option('title_notification_message_error'); ?>
             </h2>
             <p class="modal-notification__text">
-              Пожалуйста, наберите по номеру +375-33-6-585-585
+              <!-- Пожалуйста, наберите по номеру +375-33-6-585-585 -->
+              <?php echo carbon_get_theme_option('text_notification_message_error'); ?>
             </p>
           </div>
         </div>

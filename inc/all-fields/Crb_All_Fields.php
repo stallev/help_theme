@@ -94,25 +94,12 @@ class Crb_All_Fields {
 									Field::make( 'text', 'what_we_do_item', 'Абзац' )->set_width(25),
 						) )->set_header_template($this->set_header_template('what_we_do_item'))->set_max(10),
 						
-					) )
-					->add_fields( 'transport', 'Блок о транспорте ' ,array(
-						Field::make( 'complex', 'transport_list', 'Список транспортных средств' )
-						->set_layout( 'tabbed-vertical' )
-						->add_fields( array(
-									Field::make( 'text', 'transport_title', 'Название транспортного средства' )->set_width(25),
-									Field::make( 'complex', 'transport-photo-slider', 'Слайдер фото техники' )
-									->set_layout( 'tabbed-vertical' )
-									->add_fields( array(
-												Field::make( 'image', 'transport-photo-item', 'Фото транспорта' )->set_width(25),
-									) ),
-									Field::make( 'complex', 'transport-model-char-list', 'Параметры транспорта' )
-									->set_layout( 'tabbed-vertical' )
-									->add_fields( array(
-												Field::make( 'text', 'transport_model_char_name', 'Пункт характеристики' )->set_width(25),
-												Field::make( 'text', 'transport_model_char__value', 'Значение параметра' )->set_width(25),
-									) )->set_header_template($this->set_header_template('transport_model_char_name'))->set_max(20),
-						) )->set_header_template($this->set_header_template('transport_title'))->set_max(6),
-					) )					
+					) )				
+					->add_fields( 'our_photos', 'Блок Фотоотчет ' ,array(
+						Field::make( 'text', 'our_photos_title', 'Заголовок блока' )->set_width(25),
+						Field::make( 'media_gallery', 'our_photos_gallery', 'Галерея фотографий' )->set_width(100),
+						
+					) )				
 				));
 			return;
 	}

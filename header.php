@@ -1,39 +1,26 @@
 <!DOCTYPE html>
-<html lang="ru">	
+<html lang="ru">
   <head>
     <meta charset="UTF-8">
+    <meta name="robots" content="noindex,nofollow"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="<?php echo carbon_get_theme_option('page_meta_descr_seo'); ?>">
-    <meta name="keywords" content="пассажирские перевозки в Могилеве, аренда микроавтобусов в Республике Беларусь, транспортные услуги">
-    <meta name="Author" content="NikitaBus">
-    <meta name="Copyright" content="NikitaBus">
-    <meta name="Address" content="Могилев">
+    <meta name="keywords" content="<?php echo carbon_get_theme_option('meta_keywords'); ?>">
+    <meta name="Author" content="<?php echo carbon_get_theme_option('meta_author'); ?>">
+    <meta name="Copyright" content="<?php echo carbon_get_theme_option('meta_copyright'); ?>">
 
     <meta property="og:locale" content="ru_RU">
     <!-- тип контента, по умолчанию используется article -->
-    <meta property="og:type" content="article">
-    <!-- заголовок страницы, который будет выводится в записи социальной сети -->
-    <meta property="og:title" content="NikitaBus">
+    <meta property="og:type" content="<?php echo carbon_get_theme_option('meta_keywords'); ?>">
+    <meta property="og:title" content="<?php echo carbon_get_theme_option('meta_keywords'); ?>">
     <!-- описание страницы -->
-    <meta property="og:description" content="Пассажирские перевозки по Могилеву и Беларуси: оперативно и недорого>
+    <meta property="og:description" content="<?php echo carbon_get_theme_option('meta_keywords'); ?>">
     <!-- ссылка на изображение, которое будет публиковаться в записи -->
-    <meta property="og:image" content="http://nikitabus.by/wp-content/uploads/2022/07/descr_img.jpg">
-    <!-- ссылка на текущую страницу -->
-    <meta property="og:url" content="https://nikitabus.by/ ">
-    <!-- название сайта -->
-    <meta property="og:site_name" content="Пассажирские перевозки по Могилеву и Беларуси">
+    <meta property="og:image" content="<?= wp_get_attachment_image_url('seo_image', 'full'); ?>">
+    <meta property="og:site_name" content="Евангелие на фронте">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/assets/img/decor/favicon.png" type="image/png" />
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S08QML8FJC"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-S08QML8FJC');
-    </script>
-    <title>NikitaBus</title>
-		<?php wp_head() ?>
+    <title>Евангелие на фронте</title>
+    <?php wp_head() ?>
   </head>
   <body class="">
     <div class="wrapper">
@@ -41,13 +28,12 @@
         <div class="header__wrapper">
           <div class="header__top">
             <div class="logo header__logo">
-              <a href="<?php echo home_url(); ?>">
-                <span><?php echo carbon_get_theme_option('logo_text1'); ?></span>
-                <?php echo carbon_get_theme_option('logo_text2'); ?>
-              </a>
+            <a href="<?php echo home_url(); ?>">
+							<span><?php echo carbon_get_theme_option('logo_text1'); ?></span>
+							<?php echo carbon_get_theme_option('logo_text2'); ?>
+						</a>
             </div>  
             <div class="header__messengers">
-              <span class="header__phones-description">Мы online</span>
               <ul class="header__messengers-list">
                 <li class="header__messengers-item header__messengers-item--viber"><a href="<?php echo carbon_get_theme_option('site_viber-link'); ?>" class="header__messengers-link">
                   <svg width="38" height="40" viewBox="0 0 38 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,21 +55,13 @@
                     <path d="M13.7081 10.3002L12.5616 10.2377C12.2015 10.2181 11.8483 10.3384 11.5761 10.5749C11.0203 11.0575 10.1316 11.9906 9.85861 13.2066C9.45155 15.0197 10.0806 17.2398 11.7088 19.46C13.3369 21.6801 16.371 25.2323 21.7363 26.7494C23.4653 27.2383 24.8253 26.9087 25.8747 26.2375C26.7058 25.7059 27.2787 24.8526 27.4852 23.8879L27.6682 23.0329C27.7264 22.7612 27.5884 22.4855 27.336 22.3691L23.4613 20.5831C23.2097 20.4672 22.9115 20.5405 22.7423 20.7597L21.2212 22.7317C21.1063 22.8806 20.9096 22.9397 20.732 22.8773C19.6903 22.5112 16.2009 21.0498 14.2862 17.3617C14.2032 17.2017 14.2238 17.0076 14.3416 16.8712L15.7954 15.1894C15.9439 15.0177 15.9814 14.7762 15.8922 14.5676L14.222 10.66C14.133 10.452 13.9338 10.3126 13.7081 10.3002Z" fill="white"/>
                   </svg>
                 </a></li>
-                <li class="header__messengers-item header__messengers-item--instagram"><a href="<?php echo carbon_get_theme_option('site_instagram-link'); ?>" class="header__messengers-link">
+                <li class="header__messengers-item header__messengers-item--instagram call-form"><a href="<?php echo carbon_get_theme_option('site_instagram-link'); ?>" class="header__messengers-link">
                   <svg width="22" height="22" fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 22 22">
                     <path d="M15.929 0H6.07A6.078 6.078 0 0 0 0 6.071v9.858A6.078 6.078 0 0 0 6.071 22h9.858A6.078 6.078 0 0 0 22 15.929V6.07A6.078 6.078 0 0 0 15.929 0Zm4.12 15.929a4.124 4.124 0 0 1-4.12 4.12H6.07a4.124 4.124 0 0 1-4.119-4.12V6.07a4.124 4.124 0 0 1 4.12-4.119h9.857a4.124 4.124 0 0 1 4.12 4.12v9.857Z" fill="#fff"></path>
                     <path d="M11.001 5.331a5.675 5.675 0 0 0-5.669 5.67 5.675 5.675 0 0 0 5.67 5.668A5.675 5.675 0 0 0 16.67 11 5.675 5.675 0 0 0 11 5.331Zm0 9.386A3.721 3.721 0 0 1 7.284 11a3.721 3.721 0 0 1 3.717-3.717A3.721 3.721 0 0 1 14.718 11a3.721 3.721 0 0 1-3.717 3.717ZM16.907 3.676c-.376 0-.746.152-1.011.419-.267.265-.42.635-.42 1.012s.153.746.42 1.013c.265.265.635.419 1.01.419.378 0 .746-.154 1.013-.42.267-.266.42-.636.42-1.012 0-.377-.153-.747-.42-1.012a1.438 1.438 0 0 0-1.012-.419Z" fill="#fff"></path>
                   </svg>
                 </a></li>
               </ul>
-            </div>          
-            <div class="header__phones">
-              <div class="header__phones-call">
-                <div class="header__phones-call-right">
-                  <a href="tel:<?php echo carbon_get_theme_option('site_phone_1'); ?>" class="header__phone-link"><?php echo carbon_get_theme_option('site_phone_1_view'); ?></a>
-                  <span class="header__phone-order call-form">заказать звонок</span>
-                </div>
-              </div>              
             </div>
           </div>
         </div>

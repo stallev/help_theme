@@ -33,3 +33,7 @@ function site_scripts(){
   wp_enqueue_script( 'js-3', get_template_directory_uri() . '/assets/libs/lightbox/lightbox.min.js', array(), $version, true );
   wp_enqueue_script( 'js-4', get_template_directory_uri() . '/assets/js/script.min.js', array(), $version, true );
 }
+
+
+add_theme_support( 'post-thumbnails' );
+add_image_size( 'photo-preview-thumb', 320, 213 );
