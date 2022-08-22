@@ -33,7 +33,7 @@ class Crb_All_Fields {
 				Field::make( 'text',  'site_telegram-link', 'Telegram ссылка')->set_width(25),
 				Field::make( 'text',  'site_whatsapp-link', 'Whatsapp ссылка')->set_width(25),
 				Field::make( 'text',  'site_instagram-link', 'Instagram ссылка')->set_width(25),
-				Field::make( 'text',  'page_name', 'Название главной страницы')->set_width(25),
+				Field::make( 'text',  'site_name', 'Название главной страницы')->set_width(25),
 			))
 			->add_tab( __( 'SEO' ) , array(
 				Field::make( 'text',  'meta_descr_seo', 'Meta description для SEO')->set_width(25),

@@ -17,9 +17,9 @@
     <meta property="og:description" content="<?php echo carbon_get_theme_option('meta_keywords'); ?>">
     <!-- ссылка на изображение, которое будет публиковаться в записи -->
     <meta property="og:image" content="<?= wp_get_attachment_image_url('seo_image', 'full'); ?>">
-    <meta property="og:site_name" content="Евангелие на фронте">
+    <meta property="og:site_name" content="<?php echo carbon_get_theme_option('site_name'); ?>">
     <link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/assets/img/decor/favicon.png" type="image/png" />
-    <title>Евангелие на фронте</title>
+    <title><?php echo get_the_title() ?></title>
     <?php wp_head() ?>
   </head>
   <body class="">

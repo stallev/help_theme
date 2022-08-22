@@ -11,9 +11,7 @@
           <div class="container">
           <div class="main__inner">
             <div class="page-title">
-              <h1 class="page-title__text">
-                <span><?= $c_item['head-offer-title1']; ?></span>
-                <span><?= $c_item['head-offer-title2']; ?></span>
+              <h1 class="page-title__text"><?php echo carbon_get_theme_option('site_name'); ?>
               </h1>
               <p class="page-title__description">
               <?= $c_item['head-offer-description']; ?>
@@ -30,11 +28,6 @@
                 </li>
               <?php } ?>
               </ul>
-            </div>
-            <div class="action__group">
-              <a href="#donate-block" class="action action--russia">
-                <span>Пожертвовать</span>
-              </a>
             </div>
           </div>
           
@@ -241,7 +234,30 @@
       </div>
     </div>
   </section>
-  <section class="section my-help" id="donate-block">
+  <?php
+    }
+  ?>
+
+  <?php
+    if($c_item['_type'] == "our_photos"){
+  ?>
+  <section class="section gallery">
+    <div class="container">
+      <div class="section-title section-title--black-bg">
+        <h2 class="section-title__text">
+          <?= $c_item['our_photos_title']; ?>
+        </h2>
+      </div>
+      <div class="gallery__list">
+        <?php foreach ($c_item['our_photos_gallery'] as $c_subitem) { ?>
+          <a href="<?= wp_get_attachment_image_url($c_subitem, 'full'); ?>" class="gallery__item" data-lightbox="roadtrip">
+            <img src="<?= wp_get_attachment_image_url($c_subitem, 'photo-preview-thumb'); ?>" class="gallery__item-image" alt="Image">
+        </a>
+        <?php } ?>
+      </div>
+    </div>
+  </section>
+  <section class="section section--dark-bg my-help" id="donate-block">
     <div class="container">
       <div class="section-title">
         <h2 class="section-title__text">Чем я могу&nbsp;<span>помочь?</span></h2>
@@ -268,35 +284,12 @@
           </a>
         </div>
         <p class="my-help__notion">
-          В связи с санкциями, применными к банковской системе России, мы используем различные сервисы для осуществления пожертвования.
+          В связи с санкциями, применёнными к банковской системе России, мы используем различные сервисы для осуществления пожертвования.
         </p>
       </div>
     </div>
   </section>
-  <?php
-    }
-  ?>
-
-  <?php
-    if($c_item['_type'] == "our_photos"){
-  ?>
-  <section class="section gallery">
-    <div class="container">
-      <div class="section-title section-title--black-bg">
-        <h2 class="section-title__text">
-          <?= $c_item['our_photos_title']; ?>
-        </h2>
-      </div>
-      <div class="gallery__list">
-        <?php foreach ($c_item['our_photos_gallery'] as $c_subitem) { ?>
-          <a href="<?= wp_get_attachment_image_url($c_subitem, 'full'); ?>" class="gallery__item" data-lightbox="roadtrip">
-            <img src="<?= wp_get_attachment_image_url($c_subitem, 'photo-preview-thumb'); ?>" class="gallery__item-image" alt="Image">
-        </a>
-        <?php } ?>
-      </div>
-    </div>
-  </section>
-  <section class="section  section--no-bottom-pd answers">
+  <section class="section section--no-bottom-pd answers">
     <div class="container">
       <div class="section-title">
         <h2 class="section-title__text">

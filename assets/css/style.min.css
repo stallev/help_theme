@@ -1218,7 +1218,6 @@ ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  cursor: pointer;
 }
 
 .answers__form-radio-item:not(:last-child) {
@@ -1237,6 +1236,7 @@ ul {
   font-weight: 400;
   line-height: 1.55;
   padding-left: 24px;
+  cursor: pointer;
 }
 
 .answers__form-radio-item label::before {
@@ -1693,10 +1693,6 @@ ul {
   margin-bottom: 0;
 }
 
-.gallery {
-  background-color: rgba(0, 0, 0, 0.8) !important;
-}
-
 .gallery__list {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1972,6 +1968,7 @@ input {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.55;
+  color: #f6fafb;
 }
 
 .my-help__notion {
@@ -1981,6 +1978,7 @@ input {
   font-weight: 400;
   line-height: 1.55;
   margin-top: 24px;
+  color: #f6fafb;
   font-size: 13px;
 }
 
